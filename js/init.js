@@ -86,12 +86,12 @@ function elements_position() {
 	}
 }
 
-function element_add(id, rectangle, depth, movetypes, background) {
-	var element = document.createElement("div");
+function element_add(id, rectangle, depth, movetypes, image) {
+	var element = document.createElement("img");
 	element.setAttribute("id", id);
 	element.setAttribute("class", "element");
 	element.setAttribute("style", "");
-	element.style["background-image"] = background;
+	element.setAttribute("src", image);
 	world.appendChild(element);
 
 	elements.push({
