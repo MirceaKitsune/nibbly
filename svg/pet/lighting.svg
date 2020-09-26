@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="256mm"
+   height="384mm"
+   viewBox="0 0 256 384"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
@@ -63,10 +63,10 @@
        id="linearGradient845"
        x1="67.824501"
        y1="116.35648"
-       x2="141.8245"
+       x2="141.82449"
        y2="116.35648"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.54054055,0,0,1.5416667,59.338108,-284.38293)" />
+       gradientTransform="matrix(0.54054055,0,0,1.5416667,126.33811,-307.38293)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -75,9 +75,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="384.59577"
-     inkscape:cy="344.39014"
+     inkscape:zoom="0.7"
+     inkscape:cx="380.598"
+     inkscape:cy="427.0554"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -108,8 +108,8 @@
        id="rect837"
        width="40"
        height="74"
-       x="96"
-       y="-142"
+       x="163"
+       y="-165"
        transform="rotate(90)" />
   </g>
 </svg>

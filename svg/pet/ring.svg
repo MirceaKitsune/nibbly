@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="256mm"
+   height="384mm"
+   viewBox="0 0 256 384"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
@@ -79,7 +79,7 @@
        fy="64"
        r="32"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.5,0,0,1,-105,60)" />
+       gradientTransform="matrix(1.5,0,0,1,-82,118)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -88,9 +88,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="371.91912"
-     inkscape:cy="379.70566"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="668.84102"
+     inkscape:cy="602.87297"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -119,8 +119,8 @@
     <ellipse
        style="color:#000000;overflow:visible;fill:url(#radialGradient847);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.22474;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path839"
-       cx="105"
-       cy="124"
+       cx="128"
+       cy="182"
        rx="48"
        ry="32" />
   </g>

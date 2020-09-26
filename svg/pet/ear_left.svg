@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="256mm"
+   height="384mm"
+   viewBox="0 0 256 384"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
@@ -100,7 +100,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -111,7 +111,7 @@
     <g
        id="g886"
        style="stroke-width:0.826587;stroke-miterlimit:4;stroke-dasharray:none"
-       transform="matrix(1.0999108,-0.20193281,0.19501405,1.1525229,-182.04638,126.95974)">
+       transform="matrix(1.0995359,-0.21642108,0.19494759,1.2352141,-78.948465,136.05118)">
       <path
          id="path837"
          style="color:#000000;overflow:visible;fill:#dfdfdf;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.826587;stroke-miterlimit:4;stroke-dasharray:none"

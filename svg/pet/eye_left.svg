@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="256mm"
+   height="384mm"
+   viewBox="0 0 256 384"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
@@ -82,7 +82,8 @@
        fx="140"
        fy="64"
        r="32"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(23,63)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -111,7 +112,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -120,10 +121,10 @@
      inkscape:groupmode="layer"
      id="layer1">
     <circle
-       style="color:#000000;overflow:visible;fill:url(#radialGradient847);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="color:#000000;overflow:visible;fill:url(#radialGradient847);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path839"
-       cx="140"
-       cy="64"
+       cx="163"
+       cy="127"
        r="32" />
   </g>
 </svg>
