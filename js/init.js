@@ -18,24 +18,24 @@ world.style["width"] = "100%";
 world.style["height"] = "100%";
 canvas.appendChild(world);
 
-// Elements
+// Layers
 
-var elements = []; // {element, [center_x %, center_y %, scale_x %, scale_y %], depth}
+var layers = []; // {element, [center_x %, center_y %, scale_x %, scale_y %], depth}
 var direction = [0, 0]; // [center_x, center_y]
 var zoom = 0;
 
-function elements_update_parallax(e) {
+function layers_update_parallax(e) {
 	var center_x = window.innerWidth / 2;
 	var center_y = window.innerHeight / 2;
 	direction[0] = (e.clientX - center_x) / center_x;
 	direction[1] = (e.clientY - center_y) / center_y;
-	elements_position();
+	layers_position();
 }
 
-function elements_update_zoom(e) {
+function layers_update_zoom(e) {
 	var dir = e.deltaY > 0 ? 1 : -1;
 	zoom = Math.max(0, Math.min(1, zoom - (dir * ZOOM_SPEED)));
-	elements_position();
+	layers_position();
 
 	scale = zoom * ZOOM_SCALE;
 	world.style["left"] = (-scale * 100 / 2) + "%";
@@ -44,9 +44,9 @@ function elements_update_zoom(e) {
 	world.style["height"] = ((1 + scale) * 100) + "%";
 }
 
-function elements_position() {
-	for(i in elements) {
-		var item = elements[i];
+function layers_position() {
+	for(i in layers) {
+		var item = layers[i];
 		var depth = (item.depth + (1 - zoom * 2)) / 2;
 		var parallax_position = depth * 100 * PARALLAX_POSITION;
 		var parallax_scale = depth * 100 * PARALLAX_SCALE;
@@ -86,25 +86,30 @@ function elements_position() {
 	}
 }
 
-function element_add(id, rectangle, depth, movetypes, image) {
-	var element = document.createElement("img");
+function layer_add(id, rectangle, depth, movetypes, images) {
+	var element = document.createElement("div");
 	element.setAttribute("id", id);
-	element.setAttribute("class", "element");
-	element.setAttribute("style", "");
-	element.setAttribute("src", image);
+	element.setAttribute("class", "layer");
 	world.appendChild(element);
 
-	elements.push({
+	for(i in images) {
+		var element_image = document.createElement("img");
+		element_image.setAttribute("class", "image");
+		element_image.setAttribute("src", images[i]);
+		element.appendChild(element_image);
+	}
+
+	layers.push({
 		element: element,
 		rectangle: rectangle,
 		depth: depth,
 		movetypes: movetypes
 	});
-	elements_position();
+	layers_position();
 }
 
 // Update parallax on mouse cursor movement
-document.addEventListener("mousemove", elements_update_parallax);
+document.addEventListener("mousemove", layers_update_parallax);
 
 // Update zoom on mouse wheel movement
-document.addEventListener("wheel", elements_update_zoom);
+document.addEventListener("wheel", layers_update_zoom);
