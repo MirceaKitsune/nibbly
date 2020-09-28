@@ -52,9 +52,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="432.93853"
-     inkscape:cy="339.90972"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="479.78117"
+     inkscape:cy="377.72814"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -82,17 +82,17 @@
      id="layer1">
     <g
        id="g840"
-       transform="matrix(0.9182669,0,0,0.51331722,31.000084,76.161936)"
+       transform="matrix(0.9182669,0,0,0.58040972,31.000084,75.53072)"
        style="stroke-width:1.4228;stroke-miterlimit:4;stroke-dasharray:none">
       <path
          id="path840"
          style="color:#000000;overflow:visible;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.4228;stroke-miterlimit:4;stroke-dasharray:none"
-         d="m 171.86752,40.871397 c 0,19.72056 -14.39801,5.095773 -27.65173,5.09577 -13.25373,-4e-6 -23.77456,14.829027 -23.77456,-4.891529 0,-19.720557 14.84579,-25.094669 28.09952,-25.094674 13.25372,-4e-6 23.32677,5.169869 23.32677,24.890433 z"
+         d="m 171.86752,40.871397 c 0,19.72056 -14.39801,0.972267 -27.65173,0.972264 -13.25373,-4e-6 -23.77456,18.952533 -23.77456,-0.768023 0,-19.720557 14.84579,-29.218175 28.09952,-29.21818 13.25372,-4e-6 23.32677,9.293375 23.32677,29.013939 z"
          sodipodi:nodetypes="sssss" />
       <path
          id="path837"
          style="color:#000000;overflow:visible;fill:#dfdfdf;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.4228;stroke-miterlimit:4;stroke-dasharray:none"
-         d="m 173.15218,42.293781 c 0,19.335167 -17.44836,9.371081 -31.40745,9.371081 -13.9591,-4e-6 -23.04295,7.278725 -23.04295,-12.056438 0,-19.335164 15.63463,-23.304977 29.59373,-23.304982 13.95909,-4e-6 24.85667,6.655172 24.85667,25.990342 z"
+         d="m 173.15218,42.293781 c 0,19.335167 -17.44836,5.247575 -31.40745,5.247575 -13.9591,-4e-6 -23.04295,13.463984 -23.04295,-5.871179 0,-19.335164 15.63463,-29.490236 29.59373,-29.490241 13.95909,-4e-6 24.85667,10.778678 24.85667,30.113848 z"
          sodipodi:nodetypes="ssssss" />
     </g>
   </g>
