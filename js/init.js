@@ -18,6 +18,16 @@ world.style["width"] = "100%";
 world.style["height"] = "100%";
 canvas.appendChild(world);
 
+// Functions
+
+// Get the phase of a timed interval
+function get_wave(factor) {
+	var date = new Date();
+	var seconds = date.getTime() / 1000;
+	var sine = (1 + Math.sin(seconds)) / 2;
+	return Math.pow(sine, factor);
+}
+
 // Layers
 
 var layers = []; // {element, [center_x %, center_y %, scale_x %, scale_y %], depth}
@@ -30,14 +40,14 @@ function layers_update_parallax(e) {
 	var center_y = window.innerHeight / 2;
 	direction[0] = (e.clientX - center_x) / center_x;
 	direction[1] = (e.clientY - center_y) / center_y;
-	layers_update_position();
+	layers_position_all();
 }
 
 // Update the zoom level
 function layers_update_zoom(e) {
 	var dir = e.deltaY > 0 ? 1 : -1;
 	zoom = Math.max(0, Math.min(1, zoom - (dir * ZOOM_SPEED)));
-	layers_update_position();
+	layers_position_all();
 
 	scale = zoom * ZOOM_SCALE;
 	world.style["left"] = (-scale * 100 / 2) + "%";
@@ -46,13 +56,14 @@ function layers_update_zoom(e) {
 	world.style["height"] = ((1 + scale) * 100) + "%";
 }
 
-// Update the layer interval
-function layers_update_interval() {
+// Update the positions of layers with active timed movement
+function layers_position_interval() {
 	for(i in layers) {
 		var layer = layers[i];
 		for(i in layer.movers) {
 			var type = layer.movers[i][0];
-			if(type == "interval") {
+			var factor = layer.movers[i][1];
+			if(type == "interval" && get_wave(factor) > 0) {
 				layer_position(layer);
 				break;
 			}
@@ -60,8 +71,8 @@ function layers_update_interval() {
 	}
 }
 
-// Update the position of all layers
-function layers_update_position() {
+// Update the positions of all layers
+function layers_position_all() {
 	for(i in layers) {
 		var layer = layers[i];
 		layer_position(layer);
@@ -93,13 +104,10 @@ function layer_position(layer) {
 				intensity_y = Math.max(-1, Math.min(1, direction[1] * factor));
 				break;
 			case "zoom":
-				intensity_x = intensity_y = Math.max(0, Math.min(1, zoom * factor));
+				intensity_x = intensity_y = Math.pow(zoom, factor);
 				break;
 			case "interval":
-				var date = new Date();
-				var seconds = date.getTime() / 1000;
-				var wave = (1 + Math.sin(seconds)) / 2;
-				intensity_x = intensity_y = 1 - Math.max(0, Math.min(1, wave * factor));
+				intensity_x = intensity_y = get_wave(factor);
 				break;
 			default:
 				break;
@@ -138,7 +146,7 @@ function layer_add(id, rectangle, depth, movers, images) {
 		depth: depth,
 		movers: movers
 	});
-	layers_update_position();
+	layers_position_all();
 }
 
 // Update parallax on mouse cursor movement
@@ -148,4 +156,4 @@ document.addEventListener("mousemove", layers_update_parallax);
 document.addEventListener("wheel", layers_update_zoom);
 
 // Update interval based movers
-setInterval(layers_update_interval, 0);
+setInterval(layers_position_interval, 0);
