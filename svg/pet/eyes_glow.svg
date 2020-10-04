@@ -14,36 +14,24 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="eye_right.svg">
+   sodipodi:docname="eyes_glow.svg">
   <defs
      id="defs2">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient845">
+       id="linearGradient862">
       <stop
-         style="stop-color:#000000;stop-opacity:1;"
+         style="stop-color:#ffffff;stop-opacity:0.25"
          offset="0"
-         id="stop841" />
+         id="stop850" />
       <stop
-         style="stop-color:#000000;stop-opacity:1"
-         offset="0.25"
-         id="stop849" />
+         style="stop-color:#ffffff;stop-opacity:0.25"
+         offset="0.94999999"
+         id="stop854" />
       <stop
-         style="stop-color:#0fbfff;stop-opacity:1"
-         offset="0.27500001"
-         id="stop851" />
-      <stop
-         style="stop-color:#0fbfff;stop-opacity:1;"
-         offset="0.55000001"
-         id="stop853" />
-      <stop
-         style="stop-color:#ffffff;stop-opacity:1"
-         offset="0.60000002"
-         id="stop855" />
-      <stop
-         style="stop-color:#ffffff;stop-opacity:1"
+         style="stop-color:#ffffff;stop-opacity:0"
          offset="1"
-         id="stop843" />
+         id="stop860" />
     </linearGradient>
     <inkscape:path-effect
        effect="powerstroke"
@@ -75,15 +63,64 @@
        end_linecap_type="zerowidth" />
     <radialGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient845"
-       id="radialGradient859"
+       xlink:href="#linearGradient862"
+       id="radialGradient848"
        gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.375,0,0,0.49999999,27.500006,78.000002)"
+       cx="140"
+       cy="64"
+       fx="140"
+       fy="64"
+       r="32" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient845">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop841" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1"
+         offset="0.25"
+         id="stop849" />
+      <stop
+         style="stop-color:#0fbfff;stop-opacity:1"
+         offset="0.27500001"
+         id="stop851" />
+      <stop
+         style="stop-color:#0fbfff;stop-opacity:1;"
+         offset="0.55000001"
+         id="stop853" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0.60000002"
+         id="stop855" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="1"
+         id="stop843" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient845"
+       id="radialGradient847"
        cx="140"
        cy="64"
        fx="140"
        fy="64"
        r="32"
-       gradientTransform="translate(-46.999998,63)" />
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient862"
+       id="radialGradient866"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.375,0,0,0.49999999,99.50001,77.999995)"
+       cx="140"
+       cy="64"
+       fx="140"
+       fy="64"
+       r="32" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -92,9 +129,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="457.77355"
-     inkscape:cy="256.97851"
+     inkscape:zoom="0.70000001"
+     inkscape:cx="413.32069"
+     inkscape:cy="469.28857"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -112,7 +149,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -120,11 +157,19 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <circle
-       style="color:#000000;overflow:visible;fill:url(#radialGradient859);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="circle857"
-       cx="93"
-       cy="127"
-       r="32" />
+    <ellipse
+       style="color:#000000;overflow:visible;fill:url(#radialGradient848);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.433;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="circle845"
+       cx="80"
+       cy="110"
+       rx="12"
+       ry="16" />
+    <ellipse
+       style="color:#000000;overflow:visible;fill:url(#radialGradient866);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.433;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse864"
+       cx="152"
+       cy="110"
+       rx="12"
+       ry="16" />
   </g>
 </svg>
