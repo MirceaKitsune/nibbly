@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256mm"
+   height="384mm"
+   viewBox="0 0 256 384"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="shadow.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient839">
+      <stop
+         style="stop-color:#000000;stop-opacity:0.5"
+         offset="0"
+         id="stop835" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0.5"
+         offset="0.5"
+         id="stop844" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop837" />
+    </linearGradient>
+    <inkscape:path-effect
+       effect="powerstroke"
+       id="path-effect887"
+       is_visible="true"
+       lpeversion="1"
+       offset_points="0,0.1322915"
+       sort_points="true"
+       interpolator_type="CubicBezierJohan"
+       interpolator_beta="0.2"
+       start_linecap_type="zerowidth"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       scale_width="1"
+       end_linecap_type="zerowidth" />
+    <inkscape:path-effect
+       effect="powerstroke"
+       id="path-effect883"
+       is_visible="true"
+       lpeversion="1"
+       offset_points="0,0.1322915"
+       sort_points="true"
+       interpolator_type="CubicBezierJohan"
+       interpolator_beta="0.2"
+       start_linecap_type="zerowidth"
+       linejoin_type="extrp_arc"
+       miter_limit="4"
+       scale_width="1"
+       end_linecap_type="zerowidth" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient839"
+       id="radialGradient841"
+       cx="131.40721"
+       cy="198.13878"
+       fx="131.40721"
+       fy="198.13878"
+       r="73.701859"
+       gradientTransform="matrix(1.3025452,0,0,2.1709087,-43.163838,-222.14118)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient839"
+       id="radialGradient926"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(4.9230055,0,0,6.5640076,-163.13892,-635.38749)"
+       cx="131.40721"
+       cy="198.13878"
+       fx="131.40721"
+       fy="198.13878"
+       r="73.701859" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="165.25626"
+     inkscape:cy="627.61528"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     fit-margin-left="-256"
+     fit-margin-right="256"
+     lock-margins="false"
+     viewbox-width="210"
+     fit-margin-top="0"
+     viewbox-x="-23"
+     viewbox-y="-63" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path833"
+       style="color:#000000;overflow:visible;fill:url(#radialGradient926);fill-opacity:1;fill-rule:evenodd;stroke-width:4.81909"
+       d="M 483.37109 181.41797 A 362.83465 483.77953 0 0 0 120.94531 665.19727 A 362.83465 483.77953 0 0 0 483.7793 1148.9766 A 362.83465 483.77953 0 0 0 846.61328 665.19727 A 362.83465 483.77953 0 0 0 483.7793 181.41797 A 362.83465 483.77953 0 0 0 483.37109 181.41797 z M 483.7793 483.7793 A 181.41732 181.41732 0 0 1 665.19727 665.19727 A 181.41732 181.41732 0 0 1 483.7793 846.61328 A 181.41732 181.41732 0 0 1 302.36133 665.19727 A 181.41732 181.41732 0 0 1 483.7793 483.7793 z "
+       transform="scale(0.26458333)" />
+  </g>
+</svg>
