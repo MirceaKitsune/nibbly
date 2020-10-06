@@ -18,7 +18,7 @@ world.style["width"] = "100%";
 world.style["height"] = "100%";
 canvas.appendChild(world);
 
-// Functions
+// - Functions
 
 // Get the phase of a timed interval
 function get_wave(factor) {
@@ -28,9 +28,9 @@ function get_wave(factor) {
 	return Math.pow(sine, factor);
 }
 
-// Layers
+// - Elements
 
-var images = []; // {element, [center_x %, center_y %, scale_x %, scale_y %], depth}
+var images = {};
 var direction = [0, 0]; // [center_x, center_y]
 var zoom = 0;
 
@@ -40,14 +40,14 @@ function images_update_parallax(e) {
 	var center_y = window.innerHeight / 2;
 	direction[0] = (e.clientX - center_x) / center_x;
 	direction[1] = (e.clientY - center_y) / center_y;
-	images_position_all();
+	images_update_all();
 }
 
 // Update the zoom level
 function images_update_zoom(e) {
 	var dir = e.deltaY > 0 ? 1 : -1;
 	zoom = Math.max(0, Math.min(1, zoom - (dir * ZOOM_SPEED)));
-	images_position_all();
+	images_update_all();
 
 	scale = zoom * ZOOM_SCALE;
 	world.style["left"] = (-scale * 100 / 2) + "%";
@@ -56,91 +56,87 @@ function images_update_zoom(e) {
 	world.style["height"] = ((1 + scale) * 100) + "%";
 }
 
-// Update the positions of images with active timed movement
-function images_position_interval() {
+// Update images with timed movement
+function images_update_interval() {
 	for(i in images) {
-		var image = images[i];
-		for(i in image.movers) {
-			var type = image.movers[i][0];
-			var factor = image.movers[i][1];
+		var data = images[i];
+		for(x in data.movers) {
+			var type = data.movers[x].type;
+			var factor = data.movers[x].factor;
 			if(type == "interval" && get_wave(factor) > 0) {
-				image_position(image);
+				image_update(i);
 				break;
 			}
 		}
 	}
 }
 
-// Update the positions of all images
-function images_position_all() {
+// Update all images
+function images_update_all() {
 	for(i in images) {
-		var image = images[i];
-		image_position(image);
+		image_update(i);
 	}
 }
 
-// Update the position of the given image
-function image_position(image) {
-	var depth = (image.depth + (1 - zoom * 2)) / 2;
+// Update an image
+function image_update(id) {
+	var data = images[id];
+	var depth = (data.depth + (1 - zoom * 2)) / 2;
 	var parallax_position = depth * 100 * PARALLAX_POSITION;
 	var parallax_scale = depth * 100 * PARALLAX_SCALE;
 
-	var left = image.rectangle[0] - (image.rectangle[2] / 2) + (parallax_position * direction[0]) + (parallax_scale / 2);
-	var top = image.rectangle[1] - (image.rectangle[3] / 2) + (parallax_position * direction[1]) + (parallax_scale / 2);
-	var width = image.rectangle[2] - parallax_scale;
-	var height = image.rectangle[3] - parallax_scale;
+	var left = data.rectangle[0] + (parallax_position * direction[0]) + (parallax_scale / 2);
+	var top = data.rectangle[1] + (parallax_position * direction[1]) + (parallax_scale / 2);
+	var width = data.rectangle[2] - parallax_scale;
+	var height = data.rectangle[3] - parallax_scale;
 
 	// Apply mover offsets
-	for(i in image.movers) {
-		var type = image.movers[i][0];
-		var factor = image.movers[i][1];
-		var rectangle = image.movers[i][2];
+	for(i in data.movers) {
+		var type = data.movers[i].type;
+		var factor = data.movers[i].factor;
+		var rectangle = data.movers[i].rectangle;
 
-		var intensity_x = 0;
-		var intensity_y = 0;
+		var intensity = [0, 0]; // [offset_x, offset_y]
 		switch(type) {
 			case "cursor":
-				intensity_x = Math.max(-1, Math.min(1, direction[0] * factor));
-				intensity_y = Math.max(-1, Math.min(1, direction[1] * factor));
+				intensity[0] = Math.max(-1, Math.min(1, direction[0] * factor));
+				intensity[1] = Math.max(-1, Math.min(1, direction[1] * factor));
 				break;
 			case "zoom":
-				intensity_x = intensity_y = Math.pow(zoom, factor);
+				intensity[0] = intensity[1] = Math.pow(zoom, factor);
 				break;
 			case "interval":
-				intensity_x = intensity_y = get_wave(factor);
-				break;
-			default:
+				intensity[0] = intensity[1] = get_wave(factor);
 				break;
 		}
 
-		left += intensity_x * rectangle[0] * 100 * MOVER_SCALE;
-		top += intensity_y * rectangle[1] * 100 * MOVER_SCALE;
-		width += intensity_x * rectangle[2] * 100 * MOVER_SCALE;
-		height += intensity_y * rectangle[3] * 100 * MOVER_SCALE;
+		left += intensity[0] * rectangle[0] * 100 * MOVER_SCALE;
+		top += intensity[1] * rectangle[1] * 100 * MOVER_SCALE;
+		width += intensity[0] * rectangle[2] * 100 * MOVER_SCALE;
+		height += intensity[1] * rectangle[3] * 100 * MOVER_SCALE;
 	}
 
-	image.element.style["left"] = left + "%";
-	image.element.style["top"] = top + "%";
-	image.element.style["width"] = width + "%";
-	image.element.style["height"] = height + "%";
-	image.element.style["z-index"] = 1000 - Math.floor(depth * 1000);
+	var element = document.getElementById(id);
+	if(!element) {
+		element = document.createElement("img");
+		element.setAttribute("id", id);
+		element.setAttribute("class", "image");
+		world.appendChild(element);
+	}
+
+	element.setAttribute("src", data.image);
+	element.style["left"] = (left - (width / 2)) + "%";
+	element.style["top"] = (top - (height / 2)) + "%";
+	element.style["width"] = width + "%";
+	element.style["height"] = height + "%";
+	element.style["z-index"] = 1000 - Math.floor(depth * 1000);
 }
 
-// Add a new image
-function image_add(id, rectangle, depth, movers, image) {
-	var element = document.createElement("img");
-	element.setAttribute("id", id);
-	element.setAttribute("class", "image");
-	element.setAttribute("src", image);
-	world.appendChild(element);
-
-	images.push({
-		element: element,
-		rectangle: rectangle,
-		depth: depth,
-		movers: movers
-	});
-	images_position_all();
+// Set an image
+function image_set(id, data) {
+	// Update entries from the received object if data already exists, set the received object otherwise
+	images[id] = id in images ? Object.assign(images[id], data) : data;
+	image_update(id);
 }
 
 // Update parallax on mouse cursor movement
@@ -150,4 +146,4 @@ document.addEventListener("mousemove", images_update_parallax);
 document.addEventListener("wheel", images_update_zoom);
 
 // Update interval based movers
-setInterval(images_position_interval, 0);
+setInterval(images_update_interval, 0);
